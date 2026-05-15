@@ -1,0 +1,73 @@
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const skillCategories = [
+  {
+    title: 'Frontend',
+    skills: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'HTML/CSS']
+  },
+  {
+    title: 'Backend',
+    skills: ['Node.js', 'Express', 'Python', 'Flask', 'MongoDB', 'Socket.IO', 'JWT Authentication', 'REST APIs']
+  },
+  {
+    title: 'Blockchain & Web3',
+    skills: ['Solidity', 'Ethereum', 'Smart Contracts', 'Web3.js', 'MetaMask', 'WalletConnect', 'Solana']
+  },
+  {
+    title: 'AI & LLM',
+    skills: ['OpenAI SDK', 'Claude API', 'Prompt Engineering', 'AI Agents', 'MCP', 'Hooks Architecture']
+  },
+  {
+    title: 'DevOps & Cloud',
+    skills: ['Git', 'npm', 'Monorepo', 'Cloudflare R2', 'Firebase', 'AWS S3', 'TypeScript', 'C++']
+  },
+  {
+    title: 'Security',
+    skills: ['E2EE (Nacl)', 'JWT', 'CORS', 'Rate Limiting']
+  }
+];
+
+const Skills = () => {
+  return (
+    <section id="skills" className="py-8 px-6 border-t border-gray-50">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-blue-600 mb-8">Technical Arsenal</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-12">
+            {skillCategories.map((category, index) => (
+              <motion.div 
+                key={category.title}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <h3 className="text-sm font-bold mb-6 text-gray-900 border-l-2 border-blue-600 pl-4">{category.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span 
+                      key={skill} 
+                      className="px-4 py-1.5 bg-gray-50 text-gray-600 text-[10px] font-bold uppercase tracking-widest border border-gray-100 rounded-sm hover:bg-white hover:border-blue-200 transition-all cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
