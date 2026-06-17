@@ -11,7 +11,7 @@ const Education = () => {
             <h3 className="text-2xl font-bold mt-2">Bahria University</h3>
             <p className="text-gray-500 font-medium">E-8, Islamabad, Pakistan</p>
             <p className="mt-4 text-gray-600 text-lg">
-              Undergraduate Degree (Currently Studying)
+              Undergraduate Degree (Bachelors Of Science In Computer Science)
             </p>
           </div>
         </div>
